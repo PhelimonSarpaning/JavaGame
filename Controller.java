@@ -22,6 +22,7 @@ class Controller implements ActionListener, MouseListener,KeyListener
 	Controller(Model m)
 	{
 		model = m;
+		//model.load("map.json");//loads bricks on screen
 	}
 
 
@@ -98,24 +99,24 @@ class Controller implements ActionListener, MouseListener,KeyListener
 	}
   //controls mario movement
 	void update()
-	{
+	{      
            model.prev_position();
            //model.cameraPos= x-222;
 		if(keyRight) {
 			
 			model.mario.x+=10;
-			// model.cameraPos++;
+			 model.cameraPos++;
 
 		}
 		if(keyLeft) {
 			
 			model.mario.x-=10;
-			//model.cameraPos--;
+			model.cameraPos--;
 	}
 
 	   if(keySpace){
 	   	//if(model.mario.frames<=5)
-	   	model.mario.vert_vel = -15.1;
+	   	model.mario.vert_vel = -20.1;
 	   }	
 	}
 }

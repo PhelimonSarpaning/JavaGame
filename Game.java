@@ -19,6 +19,8 @@ public class Game extends JFrame
 		this.getContentPane().add(view);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
+		//model.load("map.json");
+
 	}
 
 	public static void main(String[] args)
@@ -32,9 +34,10 @@ public class Game extends JFrame
 	{
 		controller.update();
 		model.update();
-		view.repaint(); // Indirectly calls View.paintComponent
+        view.repaint(); // Indirectly calls View.paintComponent
+		
 		Toolkit.getDefaultToolkit().sync(); // Updates screen
-
+        //model.load("map.json");//loads bricks on screen
 		// Go to sleep for 50 miliseconds
 		try
 		{
